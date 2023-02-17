@@ -8,7 +8,8 @@ export default defineComponent({
 
         return () => (
             <div>
-                Page text
+                1
+                <v-avatar color="surface-variant"></v-avatar>
             </div>
         )
     },
