@@ -1,6 +1,9 @@
 module.exports = {
+	'globals': {
+		'__dirname': true
+	},
 	'env': {
-		// 'browser': true,
+		'browser': true,
 		'es2021': true,
 		'node': true
 	},
@@ -15,7 +18,7 @@ module.exports = {
 	'overrides': [],
 	'parser': '@typescript-eslint/parser',
 	'parserOptions': {
-		'project': ['tsconfig.json'],
+		'project': true,
 		'tsconfigRootDir': __dirname,
 	},
 	'plugins': [
