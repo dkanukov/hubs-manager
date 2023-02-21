@@ -1,16 +1,15 @@
-import {definePageMeta} from '#imports';
+import {defineComponent, definePageMeta} from '#imports'
 
 export default defineComponent({
-    setup() {
-        definePageMeta({
-            layout: 'default'
-        })
+	setup() {
+		definePageMeta({
+			layout: 'default'
+		})
 
-        return () => (
-            <div>
-                1
-                <v-avatar color="surface-variant"></v-avatar>
-            </div>
-        )
-    },
+		return () => (
+			<div>
+
+			</div>
+		)
+	},
 })

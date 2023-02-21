@@ -1,12 +1,12 @@
-import {NuxtPage} from '#components';
+import {NuxtPage} from '#components'
 
 export default defineComponent({
-    setup() {
-        return () => (
-            <div>
+	setup() {
+		return () => (
+			<div>
                 1
-                <NuxtPage/>
-            </div>
-        )
-    }
+				<NuxtPage/>
+			</div>
+		)
+	}
 })
