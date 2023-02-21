@@ -1,10 +1,12 @@
-import {NuxtPage} from '#components'
+import {NuxtPage, LayoutHeader} from '#components'
+import {defineComponent} from '#imports'
+import styles from './default.module.css'
 
 export default defineComponent({
 	setup() {
 		return () => (
-			<div>
-                1
+			<div class={styles.container}>
+				<LayoutHeader/>
 				<NuxtPage/>
 			</div>
 		)

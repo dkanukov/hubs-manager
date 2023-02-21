@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+// @ts-ignore
 export default defineNuxtConfig({
 	css: ['vuetify/lib/styles/main.sass'],
 	build: {
@@ -16,12 +17,6 @@ export default defineNuxtConfig({
 	modules: [
 		[
 			'@pinia/nuxt',
-			{
-				autoImports: [
-					'defineStore',
-					['defineStore', 'definePiniaStore'],
-				],
-			},
 		],
 	],
 	components: [
