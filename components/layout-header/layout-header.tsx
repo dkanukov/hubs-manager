@@ -5,7 +5,7 @@ export default defineComponent({
 	setup() {
 		return () => (
 			<div>
-				<h1>Хаб пультов МИЭМ</h1>
+				<h1 class={styles.headerTitle}>Хаб пультов МИЭМ</h1>
 			</div>
 		)
 	}
