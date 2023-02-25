@@ -1,4 +1,5 @@
 import {defineComponent, definePageMeta} from '#imports'
+import {ControllerTableFilters} from '#components'
 
 export default defineComponent({
 	setup() {
@@ -8,7 +9,7 @@ export default defineComponent({
 
 		return () => (
 			<div>
-
+				<ControllerTableFilters/>
 			</div>
 		)
 	},
