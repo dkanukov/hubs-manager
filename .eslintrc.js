@@ -44,5 +44,6 @@ module.exports = {
 			'never'
 		],
 		'@typescript-eslint/no-floating-promises': 'warn',
+		'ident': 'off',
 	}
 }

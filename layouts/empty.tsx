@@ -6,7 +6,6 @@ export default defineComponent({
 	render() {
 		return (
 			<div class={styles.container}>
-				<LayoutHeader/>
 				<NuxtPage/>
 			</div>
 		)

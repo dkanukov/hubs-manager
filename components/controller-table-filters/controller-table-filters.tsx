@@ -3,8 +3,6 @@ import {VAutocomplete, VBtn} from 'vuetify/components'
 import styles from './styles.module.css'
 import {PropType, Ref} from 'vue'
 import {RemoteController} from '~/types/myApi'
-import {ca} from 'vuetify/locale';
-
 export default defineComponent({
 	props: {
 		remoteControllers: {
@@ -18,7 +16,7 @@ export default defineComponent({
 	},
 
 	setup(props) {
-		const name = ref({
+		const selectedRemoteController = ref({
 			name: '',
 			id: ''
 		})
@@ -30,18 +28,19 @@ export default defineComponent({
 		}))
 
 		function handleNameInputChange(value: {name: string, id: string}) {
-			name.value = value
+			selectedRemoteController.value = value
 			props.whenFilterStateChange({id: value.id})
 		}
 
 		return {
-			name,
+			selectedRemoteController,
 			remoteControllersNames,
 			handleNameInputChange,
 		}
 	},
 
 	render () {
+		// TODO: добавить возможность очистить заполненное поле
 		return (
 			<div class={styles.filtersRow}>
 				<div class={styles.filterRowGroup}>
@@ -51,27 +50,27 @@ export default defineComponent({
 						variant={'outlined'}
 						density={'compact'}
 						returnObject
-						modelValue={this.name}
+						modelValue={this.selectedRemoteController}
 						onUpdate:modelValue={this.handleNameInputChange}
 						items={this.remoteControllersNames}
 						itemTitle={'name'}
 						itemValue={'id'}
 					/>
 
-					{/*<VAutocomplete*/}
-					{/*	class={styles.remoteControllerInput}*/}
-					{/*	label={'Состояние'}*/}
-					{/*	variant={'outlined'}*/}
-					{/*	density={'compact'}*/}
-					{/*	modelValue={this.status ?? ''}*/}
-					{/*/>*/}
-					{/*<VAutocomplete*/}
-					{/*	class={styles.remoteControllerInput}*/}
-					{/*	label={'Тип'}*/}
-					{/*	variant={'outlined'}*/}
-					{/*	density={'compact'}*/}
-					{/*	modelValue={this.type ?? ''}*/}
-					{/*/>*/}
+					<VAutocomplete
+						class={styles.remoteControllerInput}
+						label={'Название пульта'}
+						variant={'outlined'}
+						density={'compact'}
+						disabled
+					/>
+					<VAutocomplete
+						class={styles.remoteControllerInput}
+						label={'Название пульта'}
+						variant={'outlined'}
+						density={'compact'}
+						disabled
+					/>
 				</div>
 
 				<VBtn

@@ -11,7 +11,7 @@ export default defineComponent({
 		await tableDataStore.fetchRemoteControllers()
 
 		return {
-			tableDataStore,
+			tableDataStore
 		}
 	},
 	render() {

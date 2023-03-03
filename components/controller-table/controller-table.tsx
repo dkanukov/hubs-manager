@@ -1,7 +1,8 @@
 import {defineComponent, isReactive} from '#imports'
-import {VTable} from 'vuetify/components'
+import {VTable, VIcon, VBtn} from 'vuetify/components'
+import {mdiLink} from '@mdi/js'
 import styles from './styles.module.css'
-import {PropType} from 'vue'
+import {PropType, ref} from 'vue'
 import {RemoteController} from '~/types/myApi'
 
 export default defineComponent({
@@ -9,16 +10,22 @@ export default defineComponent({
 		remoteControllers: {
 			type: Array as PropType<RemoteController[]>,
 			required: true,
-		}
+		},
 	},
 
 	setup(props) {
+		function handleLinkClick() {
+			console.log('click')
+		}
+
 		return {
-			rc: props.remoteControllers
+			handleLinkClick
 		}
 	},
 
 	render() {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+
 		return (
 			<div>
 				<VTable>
@@ -38,19 +45,21 @@ export default defineComponent({
 					</thead>
 					<tbody>
 						{
-							this.rc.map((rc) => (
-								<tr>
+							this.$props.remoteControllers.map((rc) => (
+								<tr class={styles.tableRow}>
 									<td class={styles.tableCell}>
 										{rc.name}
+										{/*@ts-expect-error TODO: починить онклик*/}
+										<VBtn to={'/remote-controller'} onClick={this.handleLinkClick} class={styles.linkButton} variant={'plain'} icon={mdiLink} color={'primary'}/>
 									</td>
 									<td class={styles.tableCell}>
 										Not yet
 									</td>
 									<td class={styles.tableCell}>
-										{rc.description}
+										Пульт
 									</td>
 									<td class={styles.tableCell}>
-										Пульт
+										{rc.description}
 									</td>
 								</tr>
 							))
