@@ -1,4 +1,4 @@
-import {defineComponent, isReactive} from '#imports'
+import {defineComponent, isReactive, navigateTo} from '#imports'
 import {VTable, VIcon, VBtn} from 'vuetify/components'
 import {mdiLink} from '@mdi/js'
 import styles from './styles.module.css'
@@ -14,7 +14,13 @@ export default defineComponent({
 	},
 
 	setup(props) {
-		function handleLinkClick() {
+		function handleLinkClick(rcId: string) {
+			navigateTo({
+				path: '/remote-controller',
+				query: {
+					'id': rcId,
+				}
+			})
 			console.log('click')
 		}
 
@@ -50,7 +56,7 @@ export default defineComponent({
 									<td class={styles.tableCell}>
 										{rc.name}
 										{/*@ts-expect-error TODO: починить онклик*/}
-										<VBtn to={'/remote-controller'} onClick={this.handleLinkClick} class={styles.linkButton} variant={'plain'} icon={mdiLink} color={'primary'}/>
+										<VBtn onClick={() => this.handleLinkClick(rc.id)} class={styles.linkButton} variant={'plain'} icon={mdiLink} color={'primary'}/>
 									</td>
 									<td class={styles.tableCell}>
 										Not yet
