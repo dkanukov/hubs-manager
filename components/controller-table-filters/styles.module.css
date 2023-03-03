@@ -1,7 +1,13 @@
-.controllerNameFilter {
-    max-width: 200px;
+.filtersRow {
+    display: flex;
 }
 
-.controllerStatus {
+.filterRowGroup {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.remoteControllerInput {
     max-width: 200px;
 }

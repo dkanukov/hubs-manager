@@ -1,0 +1,7 @@
+.tableHeaderCell {
+    text-align: start;
+}
+
+.tableCell {
+    padding-left: 0 !important;
+}
