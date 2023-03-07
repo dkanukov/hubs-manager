@@ -59,14 +59,14 @@ export default defineComponent({
 
 					<VAutocomplete
 						class={styles.remoteControllerInput}
-						label={'Название пульта'}
+						label={'Состояние'}
 						variant={'outlined'}
 						density={'compact'}
 						disabled
 					/>
 					<VAutocomplete
 						class={styles.remoteControllerInput}
-						label={'Название пульта'}
+						label={'Тип'}
 						variant={'outlined'}
 						density={'compact'}
 						disabled
