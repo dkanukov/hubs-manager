@@ -42,6 +42,8 @@ module.exports = {
 		'semi': [
 			'error',
 			'never'
-		]
+		],
+		'@typescript-eslint/no-floating-promises': 'warn',
+		'ident': 'off',
 	}
 }

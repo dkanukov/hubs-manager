@@ -1,0 +1,15 @@
+.tableHeaderCell {
+    text-align: start;
+}
+
+.tableCell {
+    padding-left: 0 !important;
+}
+
+.linkButton {
+    opacity: 0;
+}
+
+.tableRow:hover .linkButton{
+    opacity: 1;
+}
