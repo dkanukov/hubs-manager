@@ -1,0 +1,13 @@
+.filtersRow {
+    display: flex;
+}
+
+.filterRowGroup {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.remoteControllerInput {
+    max-width: 200px;
+}

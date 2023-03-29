@@ -1,0 +1,20 @@
+.headerRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.configRow {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.configSelect {
+    max-width: 200px;
+}
+
+.scheme {
+    margin-top: 20px;
+}
+
