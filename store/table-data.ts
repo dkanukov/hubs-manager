@@ -12,13 +12,11 @@ export const tableData = defineStore('tableData', () =>{
 		if (!filtersState.value.id) {
 			return remoteControllers.value
 		}
-
-		console.log(remoteControllers.value.filter((rc) => rc.id === filtersState.value.id))
 		return remoteControllers.value.filter((rc) => rc.id === filtersState.value.id)
 	})
 
 	async function fetchRemoteControllers() {
-		// TODO: fix later
+		// TODO: fix later переписать в запрос из стора
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		//@ts-expect-error
 		remoteControllers.value = await getRemoteControllers()

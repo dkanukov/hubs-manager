@@ -1,36 +1,30 @@
 module.exports = {
-	'globals': {
-		'__dirname': true
-	},
 	'env': {
-		'browser': true,
 		'es2021': true,
 		'node': true
 	},
 	'extends': [
 		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:@typescript-eslint/strict',
-		'plugin:@typescript-eslint/recommended-requiring-type-checking',
 		'plugin:vue/vue3-essential',
-		'plugin:vue/vue3-strongly-recommended',
+		'plugin:vue/vue3-recommended',
+		'plugin:vue/base',
+		'plugin:@typescript-eslint/recommended'
 	],
-	'overrides': [],
+	'overrides': [
+	],
 	'parser': '@typescript-eslint/parser',
 	'parserOptions': {
+		'ecmaVersion': 'latest',
+		'sourceType': 'module',
 		'project': true,
 		'tsconfigRootDir': __dirname,
 	},
 	'plugins': [
 		'vue',
-		'@typescript-eslint',
+		'@typescript-eslint'
 	],
-	root: true,
 	'rules': {
-		'indent': [
-			'error',
-			'tab'
-		],
+		'indent': 'off',
 		'linebreak-style': [
 			'error',
 			'unix'
@@ -44,6 +38,5 @@ module.exports = {
 			'never'
 		],
 		'@typescript-eslint/no-floating-promises': 'warn',
-		'ident': 'off',
-	}
+	},
 }

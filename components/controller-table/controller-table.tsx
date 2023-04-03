@@ -30,8 +30,6 @@ export default defineComponent({
 	},
 
 	render() {
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-
 		return (
 			<div>
 				<VTable>
@@ -55,7 +53,7 @@ export default defineComponent({
 								<tr class={styles.tableRow}>
 									<td class={styles.tableCell}>
 										{rc.name}
-										{/*@ts-expect-error TODO: починить онклик*/}
+										{/*@ts-expect-error TODO: deal*/}
 										<VBtn onClick={() => this.handleLinkClick(rc.id)} class={styles.linkButton} variant={'plain'} icon={mdiLink} color={'primary'}/>
 									</td>
 									<td class={styles.tableCell}>

@@ -1,11 +1,10 @@
 import {defineComponent, definePageMeta, isReactive, ref, unref, useRoute} from '#imports'
 import styles from './styles.module.css'
 import {tableData} from '~/store/table-data'
-import {VIcon, VBtn, VSelect} from 'vuetify/components'
+import {VBtn, VSelect} from 'vuetify/components'
 import {mdiArrowLeft} from '@mdi/js'
 import {Ref} from 'vue'
 import {fabric} from 'fabric'
-import tippy, {followCursor} from 'tippy.js'
 
 export default defineComponent({
 	setup() {
@@ -14,23 +13,14 @@ export default defineComponent({
 		})
 		// TODO: потом использовать для запроса в апи
 		const id = useRoute().query.id
-		const tooltipId = ref('')
 
 		const tableDataStore = tableData()
 		const remoteController = ref(tableDataStore.remoteControllers.find((rc) => rc.id === id))
 		const canvasRef: Ref<HTMLCanvasElement | null> = ref(null)
 
-		function updateTooltipId(value?: string) {
-			if (!value) {
-				return
-			}
-			tooltipId.value = value
-		}
 		return {
 			remoteController,
 			canvasRef,
-			tooltipId,
-			updateTooltipId,
 		}
 	},
 
@@ -39,28 +29,10 @@ export default defineComponent({
 		if (!this.canvasRef || !this.remoteController) {
 			return
 		}
-		const tooltip = tippy('#tooltip', {
-			content: 'id later',
-			interactive: true,
-			allowHTML: true,
-			plugins: [followCursor],
-			followCursor: true,
-			showOnCreate: false,
-		})
 
 		const canvas = new fabric.Canvas('c', {
 			width: 1400,
 			height: 1000
-		})
-
-		canvas.on('mouse:out', () => {
-			tooltip[0].hide()
-		})
-
-		canvas.on('mouse:over', (e) => {
-			console.log(e)
-			this.updateTooltipId(e.target?.hoverCursor)
-			tooltip[0].show()
 		})
 
 		let xMove = 0
@@ -90,12 +62,8 @@ export default defineComponent({
 			})
 
 			canvas.add(rect)
-			// group.add(rect)
 			xMove++
 		}
-
-
-		// canvas.add(group)
 	},
 
 	render() {
@@ -116,7 +84,7 @@ export default defineComponent({
 						disabled
 					/>
 				</div>
-				<div class={styles.scheme} id='tooltip'>
+				<div class={styles.scheme}>
 					<canvas id='c' ref={'canvasRef'}></canvas>
 				</div>
 			</div>
