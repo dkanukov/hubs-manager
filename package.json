@@ -8,6 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@mdi/js": "^7.1.96",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
@@ -15,15 +16,24 @@
     "eslint-plugin-vue": "^9.9.0",
     "nuxt": "^3.1.0",
     "stylelint": "^15.2.0",
+    "stylelint-config-clean-order": "^5.0.0",
     "stylelint-config-standard": "^30.0.1",
+    "stylelint-order": "^6.0.2",
+    "swagger-typescript-api": "^12.0.3",
     "typescript": "^4.9.5",
     "typescript-plugin-css-modules": "^4.1.1",
     "vue-tsc": "^1.0.24"
   },
   "dependencies": {
+    "@mdi/font": "^7.1.96",
     "@pinia/nuxt": "^0.4.6",
+    "@types/fabric": "^5.3.0",
+    "fabric": "^5.3.0",
     "lodash": "^4.17.21",
-    "sass": "^1.58.2",
-    "vuetify": "^3.1.4"
+    "roughjs": "^4.5.2",
+    "sass": "^1.58.3",
+    "tippy.js": "^6.3.7",
+    "vue-fabric-wrapper": "^0.3.71",
+    "vuetify": "^3.1.7"
   }
 }
