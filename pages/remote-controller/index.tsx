@@ -61,6 +61,8 @@ export default defineComponent({
 
 			})
 
+			console.log(xMove, yMove)
+
 			canvas.add(rect)
 			xMove++
 		}

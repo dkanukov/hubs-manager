@@ -52,7 +52,7 @@ export default defineComponent({
 							this.$props.remoteControllers.map((rc) => (
 								<tr class={styles.tableRow}>
 									<td class={styles.tableCell}>
-										{rc.name}
+										{rc.id}
 										{/*@ts-expect-error TODO: deal*/}
 										<VBtn onClick={() => this.handleLinkClick(rc.id)} class={styles.linkButton} variant={'plain'} icon={mdiLink} color={'primary'}/>
 									</td>

@@ -9,6 +9,9 @@ export default defineComponent({
 		})
 		const tableDataStore = tableData()
 		await tableDataStore.fetchRemoteControllers()
+		// const res = await fetch('http://172.18.191.24:8081/getControllers')
+		// const data = await res.json()
+		// console.log(data)
 
 		return {
 			tableDataStore
